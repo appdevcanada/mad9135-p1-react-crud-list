@@ -1,22 +1,45 @@
-.App {
+body {
   text-align: center;
+  background-color: hsl(0, 0%, 90%);
 }
 
-.App-logo {
-  height: 40vmin;
+#list {
+  margin-top: 5px;
+}
+.card-body {
+  background-color: hsl(0, 0%, 95%);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: hsl(216, 5%, 19%);
+  height: 10vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: calc(5px + 2vmin);
+  color: hsl(0, 0%, 80%);
+
 }
 
-.App-link {
-  color: #09d3ac;
+.btn-secondary {
+  background-color: transparent
+}
+
+a {
+  padding: 5px;
+  color: hsl(0, 0%, 70%);
+
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: hsl(0, 0%, 79%);
+  color: hsl(0, 0%, 30%);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.error {
+  color: hsl(0, 93%, 57%);
+  text-align: center;
 }
