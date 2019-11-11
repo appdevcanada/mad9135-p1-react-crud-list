@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44540893820981c709746f67dc195733",
+    "revision": "78596b8b78357eb86b4832f6b81c1066",
     "url": "/mad9135-p1-react-crud-list/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mad9135-p1-react-crud-list/static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "dcc6865c1da98b200405",
+    "revision": "1034cbc83328411c787e",
     "url": "/mad9135-p1-react-crud-list/static/css/main.63f0c5dc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mad9135-p1-react-crud-list/static/js/2.2283d53d.chunk.js"
   },
   {
-    "revision": "dcc6865c1da98b200405",
-    "url": "/mad9135-p1-react-crud-list/static/js/main.44bdccc6.chunk.js"
+    "revision": "1034cbc83328411c787e",
+    "url": "/mad9135-p1-react-crud-list/static/js/main.7adee741.chunk.js"
   },
   {
     "revision": "93c9bd13cc9b6552c3ad",
