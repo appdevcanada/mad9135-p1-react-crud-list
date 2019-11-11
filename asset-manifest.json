@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.63f0c5dc.chunk.css",
-    "main.js": "/static/js/main.a4bd30a8.chunk.js",
-    "main.js.map": "/static/js/main.a4bd30a8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.065bd361.js",
-    "runtime-main.js.map": "/static/js/runtime-main.065bd361.js.map",
-    "static/css/2.510409cd.chunk.css": "/static/css/2.510409cd.chunk.css",
-    "static/js/2.2283d53d.chunk.js": "/static/js/2.2283d53d.chunk.js",
-    "static/js/2.2283d53d.chunk.js.map": "/static/js/2.2283d53d.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.60857d11dc73a8f37e16c060718437f0.js": "/precache-manifest.60857d11dc73a8f37e16c060718437f0.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.510409cd.chunk.css.map": "/static/css/2.510409cd.chunk.css.map",
-    "static/css/main.63f0c5dc.chunk.css.map": "/static/css/main.63f0c5dc.chunk.css.map",
-    "static/media/favicon.png": "/static/media/favicon.129b27ae.png"
+    "main.css": "/mad9135-p1-react-crud-list/static/css/main.63f0c5dc.chunk.css",
+    "main.js": "/mad9135-p1-react-crud-list/static/js/main.44bdccc6.chunk.js",
+    "main.js.map": "/mad9135-p1-react-crud-list/static/js/main.44bdccc6.chunk.js.map",
+    "runtime-main.js": "/mad9135-p1-react-crud-list/static/js/runtime-main.c813c03e.js",
+    "runtime-main.js.map": "/mad9135-p1-react-crud-list/static/js/runtime-main.c813c03e.js.map",
+    "static/css/2.510409cd.chunk.css": "/mad9135-p1-react-crud-list/static/css/2.510409cd.chunk.css",
+    "static/js/2.2283d53d.chunk.js": "/mad9135-p1-react-crud-list/static/js/2.2283d53d.chunk.js",
+    "static/js/2.2283d53d.chunk.js.map": "/mad9135-p1-react-crud-list/static/js/2.2283d53d.chunk.js.map",
+    "index.html": "/mad9135-p1-react-crud-list/index.html",
+    "precache-manifest.0b74f197544ccda0e4e9046edcc2aec2.js": "/mad9135-p1-react-crud-list/precache-manifest.0b74f197544ccda0e4e9046edcc2aec2.js",
+    "service-worker.js": "/mad9135-p1-react-crud-list/service-worker.js",
+    "static/css/2.510409cd.chunk.css.map": "/mad9135-p1-react-crud-list/static/css/2.510409cd.chunk.css.map",
+    "static/css/main.63f0c5dc.chunk.css.map": "/mad9135-p1-react-crud-list/static/css/main.63f0c5dc.chunk.css.map",
+    "static/media/favicon.png": "/mad9135-p1-react-crud-list/static/media/favicon.129b27ae.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.065bd361.js",
+    "static/js/runtime-main.c813c03e.js",
     "static/css/2.510409cd.chunk.css",
     "static/js/2.2283d53d.chunk.js",
     "static/css/main.63f0c5dc.chunk.css",
-    "static/js/main.a4bd30a8.chunk.js"
+    "static/js/main.44bdccc6.chunk.js"
   ]
 }
