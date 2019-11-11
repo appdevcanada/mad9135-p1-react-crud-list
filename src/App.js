@@ -11,9 +11,9 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ListView} />
-          <Route path="/item/:id" component={ListItem} />
-          <Route path="/item" component={NewItemView} />
+          <Route exact path={process.env.PUBLIC_URL + '/'} component={ListView} />
+          <Route path={process.env.PUBLIC_URL + '/item/:id'} component={ListItem} />
+          <Route path={process.env.PUBLIC_URL + '/item'} component={NewItemView} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
