@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "636553419bbc36f3343865fae218a10a",
+    "revision": "9457095a2638d06925202b004b096554",
     "url": "/mad9135-p1-react-crud-list/index.html"
   },
   {
-    "revision": "020a970dbd0854900717",
+    "revision": "a38cdb8f6881c26ae750",
     "url": "/mad9135-p1-react-crud-list/static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "e283942b9b82ddcb2324",
+    "revision": "cfe0afe81e74097905e2",
     "url": "/mad9135-p1-react-crud-list/static/css/main.63f0c5dc.chunk.css"
   },
   {
-    "revision": "020a970dbd0854900717",
-    "url": "/mad9135-p1-react-crud-list/static/js/2.2283d53d.chunk.js"
+    "revision": "a38cdb8f6881c26ae750",
+    "url": "/mad9135-p1-react-crud-list/static/js/2.7a82693d.chunk.js"
   },
   {
-    "revision": "e283942b9b82ddcb2324",
-    "url": "/mad9135-p1-react-crud-list/static/js/main.1d9f9dd5.chunk.js"
+    "revision": "cfe0afe81e74097905e2",
+    "url": "/mad9135-p1-react-crud-list/static/js/main.01fa4650.chunk.js"
   },
   {
     "revision": "93c9bd13cc9b6552c3ad",
