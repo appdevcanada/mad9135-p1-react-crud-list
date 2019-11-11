@@ -9,11 +9,11 @@ import './App.css';
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact path={process.env.PUBLIC_URL + '/'} component={ListView} />
-          <Route path={process.env.PUBLIC_URL + '/item/:id'} component={ListItem} />
-          <Route path={process.env.PUBLIC_URL + '/item'} component={NewItemView} />
+          <Route exact path='/' component={ListView} />
+          <Route path='/item/:id' component={ListItem} />
+          <Route path='/item' component={NewItemView} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
@@ -21,10 +21,10 @@ export default class App extends Component {
   }
 }
 
-class NotFound extends React.Component {
+class NotFound extends Component {
   render() {
     return (
-      <h1 className="error">&nbsp;Error 404 - URL Not Found</h1>
+      <h1 className="error">Error 404 - URL Not Found</h1>
     );
   }
 }
