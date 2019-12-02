@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import AppHeader from './AppHeader';
 import ListView from './ListView'
+import UId from 'cuid';
 import 'bootstrap/dist/css/bootstrap.css';
-import Firebase from './initialize'
 
-const db = Firebase.firestore();
-var items = db.collection("items");
-var itemList = [];
-var Listing = {};
-
+var lsListing = [];
 
 export default class ListItem extends Component {
   constructor(props) {
@@ -24,34 +20,24 @@ export default class ListItem extends Component {
   }
 
   componentDidMount() {
-    this.loadItems();
-  }
-
-  loadItems() {
-    items.get().then((snapshot) => {
-      snapshot.forEach((item) => {
-        Listing = { id: item.id, company: item.data().company, website: item.data().website, email: item.data().email };
-        itemList.push(Listing);
-      })
-      this.setState({
-        list: itemList,
-        error: null
-      });
-      Listing = this.state.list;
-      const idx = Listing.findIndex(i => i.id === this.props.match.params.id);
-      this.setState({
-        company: Listing[idx].company,
-        website: Listing[idx].website,
-        email: Listing[idx].email
-      });
+    lsListing = JSON.parse(localStorage.getItem("MyList21051969"));
+    this.setState({
+      list: lsListing
+    });
+    const idx = lsListing.findIndex(i => i.id === this.props.match.params.id);
+    this.setState({
+      company: lsListing[idx].company,
+      website: lsListing[idx].website,
+      email: lsListing[idx].email
     });
   }
 
   deleteItem() {
-    const idx = Listing.findIndex(i => i.id === this.props.match.params.id);
-    Listing.splice(idx, 1);
-    this.setState({ list: Listing });
-    items.doc(this.props.match.params.id).delete();
+    const idx = lsListing.findIndex(i => i.id === this.props.match.params.id);
+    lsListing.splice(idx, 1);
+    localStorage.setItem("MyList21051969", JSON.stringify(lsListing));
+    lsListing = localStorage.getItem("MyList21051969");
+    this.setState({ list: JSON.parse(lsListing) });
   }
 
   handleChange = (e) => {
@@ -62,22 +48,24 @@ export default class ListItem extends Component {
 
   updateList = (e) => {
     e.preventDefault();
-    // Add a new document with a generated id by Firebase.
     if (this.state.company.length > 0) {
-      items.add({
+      var uid = UId();
+      const newItem = {
+        id: uid,
         company: this.state.company,
         website: this.state.website,
         email: this.state.email
-      })
-        .then(function (docRef) {
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function (error) {
-          console.error("Error adding document: ", error);
-        });
+      };
 
       this.deleteItem();
-      this.returnToList();
+      var listing = this.state.list;
+      if (listing === null || listing.length === 0) {
+        localStorage.setItem("MyList21051969", JSON.stringify([newItem]));
+      } else {
+        listing.push(newItem);
+        localStorage.setItem("MyList21051969", JSON.stringify(listing));
+      }
+      this.returnToList()
     } else {
       alert("Please input some valid text in Company's name");
     }
@@ -85,7 +73,7 @@ export default class ListItem extends Component {
 
   returnToList = (e) => {
     this.props.history.push("/");
-    return <ListView />;
+    return (<ListView />);
   }
 
   render() {
