@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import AppHeader from './AppHeader';
 import ListView from './ListView'
-import UId from 'cuid';
 import 'bootstrap/dist/css/bootstrap.css';
+import Firebase from './initialize'
+
+const db = Firebase.firestore();
+var items = db.collection("items");
 
 
 export default class NewItemView extends Component {
@@ -25,23 +28,19 @@ export default class NewItemView extends Component {
 
   updateList = (e) => {
     e.preventDefault();
+    // Add a new document with a generated id by Firebase.
     if (this.state.company.length > 0) {
-      var uid = UId();
-      const newItem = {
-        id: uid,
+      items.add({
         company: this.state.company,
         website: this.state.website,
         email: this.state.email
-      };
-
-      var lsListing = localStorage.getItem("MyList21051969");
-      var listing = JSON.parse(lsListing);
-      if (listing === null || listing.length === 0) {
-        localStorage.setItem("MyList21051969", JSON.stringify([newItem]));
-      } else {
-        listing.push(newItem);
-        localStorage.setItem("MyList21051969", JSON.stringify(listing));
-      }
+      })
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
       this.returnToList()
     } else {
       alert("Please input some valid text in Company's name");
@@ -50,7 +49,7 @@ export default class NewItemView extends Component {
 
   returnToList = (e) => {
     this.props.history.push("/");
-    return (<ListView />);
+    return <ListView />;
   }
 
   render() {

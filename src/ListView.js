@@ -3,9 +3,12 @@ import AppHeader from './AppHeader';
 import ListItem from './ListItem'
 import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import Firebase from './initialize'
 
-var lsListing = [];
-var emptyList = true;
+const db = Firebase.firestore();
+var items = db.collection("items");
+var itemList = [];
+var Listing = {};
 
 export default class ListView extends Component {
   constructor(props) {
@@ -21,11 +24,16 @@ export default class ListView extends Component {
   }
 
   loadItems() {
-    lsListing = localStorage.getItem("MyList21051969");
-    emptyList = lsListing == null ? true : false;
-    this.setState({
-      list: emptyList ? [] : JSON.parse(lsListing),
-      error: null
+    itemList = [];
+    items.get().then((snapshot) => {
+      snapshot.forEach((item) => {
+        Listing = { id: item.id, company: item.data().company, website: item.data().website, email: item.data().email };
+        itemList.push(Listing);
+      })
+      this.setState({
+        list: itemList,
+        error: null
+      });
     });
   }
 
@@ -37,12 +45,11 @@ export default class ListView extends Component {
 
   deleteItem = (e) => {
     console.log("ID Parent: " + e.target.id);
-    lsListing = this.state.list;
-    const idx = lsListing.findIndex(i => i.id === e.target.id);
-    lsListing.splice(idx, 1);
-    localStorage.setItem("MyList21051969", JSON.stringify(lsListing));
-    lsListing = localStorage.getItem("MyList21051969");
-    this.setState({ list: JSON.parse(lsListing) });
+    Listing = this.state.list;
+    const idx = Listing.findIndex(i => i.id === e.target.id);
+    Listing.splice(idx, 1);
+    this.setState({ list: Listing });
+    items.doc(e.target.id).delete();
   }
 
   render() {
@@ -73,7 +80,7 @@ export default class ListView extends Component {
               </div>
             ))}
           {this.state.list.length === 0 &&
-            <h3 className="error">Item List is Empty<br />Click New Item</h3>}
+            <h3 className="error">Item List is Empty<br />Click + (New Item)</h3>}
           {this.state.error &&
             <h3 className="error">{this.state.error}</h3>}
         </div>
